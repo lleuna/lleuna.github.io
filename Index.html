@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGnosis</title>
+    <link rel="stylesheet" href="https://use.typekit.net/fzz4ptr.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- INTRODUCTION -->
+    <div> 
+    <h1>TechGnosis</h1>
+        <p>Welcome to Techgnosis, where technology and mysticism meet.
+
+        <br>Computers, networks, artificial intelligence, these aren’t just tools. They shape the way we think, connect, and imagine. The digital world feels new, but it echoes something ancient, 
+        <span class="symbols">
+            symbols
+            <img class="symbols-img" src="https://via.placeholder.com/150" alt="Symbols Images">
+        </span>,
+        <span class="rituals">
+            rituals
+            <img class="rituals-img" src="" alt="Rituals IMG">
+        </span>,
+         hidden knowledge. Cyberspace is more than code; it’s a place where technology and myth collide.
+        </p>
+    </div>
+<!-- The Evolution of Memory -->
+    <div> 
+        <h2>The Evolution of Memory</h2>
+        <div class="container">
+          <div class="background-image"></div>
+          <p>
+            <span class="split left" style="animation-delay: 5.25s;">
+              Before <span class="harddrives">hard drives <img class="harddrivesimg" src="Images/harddrive.jpg" alt="harddrives"></span> and 
+              <span class="cloudstorage">cloud storage <img class="cloudstorageimg" src="Images/cloudstorage.png" alt="cloud storage"></span>, 
+              people relied on memory palaces,
+            </span>
+            <span class="split right" style="animation-delay: 5.5s;">
+              imaginary spaces where knowledge was stored like objects in a room.
+            </span>
+            <span class="split left" style="animation-delay: 5.75s;">
+              Magicians, scholars, and mystics used these techniques to retain vast amounts 
+            </span>
+            <span class="split right" style="animation-delay: 6s; padding-bottom: 25px;">of information.</span>
+            Imagine yourself in Renaissance Florence, walking through a vast marble hall, each corridor lined 
+            with images, objects, symbols, each one holding a story, a lesson, a fact. This was how knowledge was 
+            preserved before the written word could be spread widely.
+            <br><br>Today, <span class="computers">computers <img class="computersimg" src="Images/computers.webp" alt="computer"></span>
+            do this work for us. But the <span class="impulse-text animate">impulse</span> is the same: 
+            
+            <span class="typing-container">
+                <span class="highlight-block" id="highlight-block"></span>
+                <span class="word-segment" id="segment1">to</span>
+                <span class="word-segment" id="segment2">collect,</span>
+                <span class="word-segment" id="segment3">organize,</span>
+                <span class="word-segment" id="segment4">and</span>
+                <span class="word-segment" id="segment5">retrieve</span>
+              </span>
+              knowledge in meaningful ways.
+              We build archives that never forget, databases that 
+              <span class="stretch-container">
+                <span class="stretch-word">stretch</span> 
+                 <span class="right-part"> across the world,</span>
+              </span>
+              what we want before we even search for it. Memory is no longer just a function of the mind,
+              it has 
+              expanded
+               into the network.</p>
+            </p>
+          </div>
+    </div>
+      
+
+        <!-- Typing Animation Script -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const highlightBlock = document.getElementById('highlight-block');
+            const segments = [];
+
+            let i = 1;
+            let segment = document.getElementById('segment' + i);
+            while (segment) {
+              segments.push(segment);
+              i++;
+              segment = document.getElementById('segment' + i);
+            }
+            
+            let currentIndex = 0;
+            
+            function animateNextSegment() {
+              if (currentIndex >= segments.length) {
+                // Animation complete
+                return;
+              }
+              
+              const segment = segments[currentIndex];
+              const containerRect = segment.parentElement.getBoundingClientRect();
+              const segmentRect = segment.getBoundingClientRect();
+              
+              // Position highlight block precisely before showing it
+              highlightBlock.style.left = (segmentRect.left - containerRect.left) + 'px';
+              highlightBlock.style.width = segmentRect.width + 'px';
+              highlightBlock.style.opacity = '0'; // Reset opacity
+              
+              // Flash the highlight block
+              requestAnimationFrame(() => {
+                // Show highlight
+                highlightBlock.style.opacity = '1';
+                
+                // Wait a moment, then show the text and hide the highlight
+                setTimeout(() => {
+                  segment.classList.add('visible');
+                  highlightBlock.style.opacity = '0';
+                  currentIndex++;
+                  setTimeout(animateNextSegment, 300);
+                }, 200);
+              });
+            }
+            
+            // Start animation with a short delay
+            setTimeout(animateNextSegment, 300);
+          });
+        </script>
+
+        
+
+
+    
+
+
+    <div class="container">
+        <div class="swatch"></div>
+        <div class="swatch bg-cyan"></div>
+    </div>
+
+</body>
+</html>
