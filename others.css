@@ -1,0 +1,192 @@
+div.popup{
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  font-size: 20px;
+  width: 500px;
+  height: 500px;
+  z-index: 10;
+  display: none;
+}
+
+div.popup.active{
+  display: block;
+}
+
+.welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #021419;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.welcome.visible {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img, video {
+  width: 100%;
+  display: block;
+}
+
+/* HEROVIDEO */
+div.herovideo{
+  width: 200px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  border-radius: 100%;
+}
+div.herovideo video{
+    border-radius: 100%;
+}
+
+
+  /* HEALTHBAR */
+div.health-container {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 1000px;
+            height: 20px;
+            border: 2px solid #7AC6C0;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 20; 
+        }
+
+        .health-bar {
+            height: 100%;
+            width: 100%;
+            background-color: #F2D0E5;
+            transition: width 0.2s ease-out;
+            border-radius: 2px;
+            background-image: linear-gradient(
+                to right,
+                #F2D0E5,
+                #CD95C2
+            );
+        }
+
+/* IMAGE */
+        .image-container {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            animation: expandHeight 2s ease-out 1s forwards;
+        }
+
+        .florence-image{
+            width: 100%;
+            height: 0;
+            animation: expandHeight 2s ease-out 1s forwards;
+        }
+
+        .expanding-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display:flex;
+        }
+
+        @keyframes expandHeight {
+            from {
+                height: 0;
+            }
+            to {
+                height: 500px;
+            }
+        }
+
+/*IMG HARD DRIVES*/
+  .harddrives {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted; 
+    cursor: help;
+  }
+  .harddrives .harddrivesimg{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    width: 150px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 10;
+    transition: opacity 0.5s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .harddrives:hover .harddrivesimg {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*IMG CLOUD STORAGE*/
+  .cloudstorage {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  .cloudstorage .cloudstorageimg{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    width: 150px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 10;
+    transition: opacity 0.5s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .cloudstorage:hover .cloudstorageimg {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* IMG COMPUTER */
+  .computers {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  .computers .computersimg{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    width: 150px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 10;
+    transition: opacity 0.5s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .computers:hover .computersimg {
+    visibility: visible;
+    opacity: 1;
+  }

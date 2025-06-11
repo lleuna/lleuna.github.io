@@ -5,134 +5,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGnosis</title>
     <link rel="stylesheet" href="https://use.typekit.net/fzz4ptr.css">
+    <link rel="stylesheet" href="others.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <script src="animation.js"></script>
+    <script src="classchange.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-  <!-- INTRODUCTION -->
-    <div> 
-    <h1>TechGnosis</h1>
-        <p>Welcome to Techgnosis, where technology and mysticism meet.
-
-        <br>Computers, networks, artificial intelligence, these aren’t just tools. They shape the way we think, connect, and imagine. The digital world feels new, but it echoes something ancient, 
-        <span class="symbols">
-            symbols
-            <img class="symbols-img" src="https://via.placeholder.com/150" alt="Symbols Images">
-        </span>,
-        <span class="rituals">
-            rituals
-            <img class="rituals-img" src="" alt="Rituals IMG">
-        </span>,
-         hidden knowledge. Cyberspace is more than code; it’s a place where technology and myth collide.
-        </p>
+<!-- SPLASHSCREEN -->
+    <div class="welcome visible text">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>This site requires audio.<br>Click anywhere to begin.
     </div>
-<!-- The Evolution of Memory -->
-    <div> 
-        <h2>The Evolution of Memory</h2>
-        <div class="container">
-          <div class="background-image"></div>
-          <p>
-            <span class="split left" style="animation-delay: 5.25s;">
-              Before <span class="harddrives">hard drives <img class="harddrivesimg" src="Images/harddrive.jpg" alt="harddrives"></span> and 
-              <span class="cloudstorage">cloud storage <img class="cloudstorageimg" src="Images/cloudstorage.png" alt="cloud storage"></span>, 
-              people relied on memory palaces,
-            </span>
-            <span class="split right" style="animation-delay: 5.5s;">
-              imaginary spaces where knowledge was stored like objects in a room.
-            </span>
-            <span class="split left" style="animation-delay: 5.75s;">
-              Magicians, scholars, and mystics used these techniques to retain vast amounts 
-            </span>
-            <span class="split right" style="animation-delay: 6s; padding-bottom: 25px;">of information.</span>
-            Imagine yourself in Renaissance Florence, walking through a vast marble hall, each corridor lined 
-            with images, objects, symbols, each one holding a story, a lesson, a fact. This was how knowledge was 
-            preserved before the written word could be spread widely.
-            <br><br>Today, <span class="computers">computers <img class="computersimg" src="Images/computers.webp" alt="computer"></span>
-            do this work for us. But the <span class="impulse-text animate">impulse</span> is the same: 
+<div class="herovideo">
+  <video class="video" controls>
+    <source src="techvid.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="health-container">
+    <div class="health-bar" id="healthBar"></div>
+
+<div class="solid"></div>
+
+<div class="quest">
+    <div class="text tal" style="background-color: transparent; margin-left: 10%;">OBJECTIVES</div>
+    <div class="quest-item">
+            <input type="checkbox" class="quest-checkbox" id="q1">
+            <label for="q1" class="quest-text">find meaning</label>
+        </div>
+        
+        <div class="quest-item">
+            <input type="checkbox" class="quest-checkbox" id="q2">
+            <label for="q2" class="quest-text">uncover hidden truths</label>
+        </div>
+        
+        <div class="quest-item">
+            <input type="checkbox" class="quest-checkbox" id="q3">
+            <label for="q3" class="quest-text">navigate an ever-changing reality</label>
+        </div>
+</div>
+
+
+
+</div>
+    <div class="spacer"></div>
+    <div class="text tac" style="font-size: 30px; line-height: 50px;">Welcome to</div>
+    <div class="headr tac" style="font-size: 50px; font-style: normal; line-height: 50px;">TECHGNOSIS</div>
+    <div class="box" style="align-content: center;">
+        <div class="logogif" style="align-items: center; z-index: 1000; background-color: transparent;"></div>
+        <div class="bounce-slide text" style="margin-left: 15%; margin-right: 10%;">
+        <span>where technology and mysticism meet.</span>
+    </div>
+    </div>
+
+<div class="container">
+    <div class="spacer"></div><div class="spacer"></div>    
+        <div class="text ml mr50">
+            Computers, networks, artificial intelligence, these aren't just tools. They shape the way we think, connect, and imagine. The digital world feels new, but it echoes something ancient, symbols, rituals, hidden knowledge. Cyberspace is more than code; it's a place where technology and myth collide.
+        </div>
+        <div class="spacer"></div>
+        <!-- EVOLUTION OF MEMORY -->
+        <div class="section">
+            <div class="header ml mr50">The Evolution of Memory</div>
+            <div class="sspacer"></div>
+            <div class="text ml mr50 tal">
+                Before 
+                <span class="harddrives">hard drives <img class="harddrivesimg" src="Images/harddrive.jpg" alt="harddrives"></span> and
+                <span class="cloudstorage">cloud storage <img class="cloudstorageimg" src="Images/cloudstorage.png" alt="cloud storage"></span>
+                , people relied on memory palaces, imaginary spaces where knowledge was stored like objects in a room. Magicians, scholars, and mystics used these techniques to retain vast amounts of information.
+            </div>
             
-            <span class="typing-container">
+            <div class="image-container" id="imageContainer">
+            <img src="images/florence.jpg" alt="" class="florence-image">
+            </div>
+            
+            <div class="text ml50 mr tal">
+                Imagine yourself in Renaissance Florence, walking through a vast marble hall, each corridor lined with images, objects, symbols, each one holding a story, a lesson, a fact. This was how knowledge was preserved before the written word could be spread widely.
+            </div>
+            <div class="sspacer"></div>
+            <div class="magic floating-background" id="particleContainer" style="position: sticky;"></div>
+            <div class="text ml tal">Today, 
+                <span class="computers">computers <img class="computersimg" src="Images/computers.webp" alt="computer"></span>
+                 do this work for us.<br></div>
+            <div class="text ml8 tal">But the 
+                <span class="impulse-text">impulse</span> 
+                is the same:<br></div>
+            <div class="text ml16 tal">
+                <span class="typing-container">
                 <span class="highlight-block" id="highlight-block"></span>
                 <span class="word-segment" id="segment1">to</span>
                 <span class="word-segment" id="segment2">collect,</span>
                 <span class="word-segment" id="segment3">organize,</span>
                 <span class="word-segment" id="segment4">and</span>
                 <span class="word-segment" id="segment5">retrieve</span>
-              </span>
-              knowledge in meaningful ways.
-              We build archives that never forget, databases that 
-              <span class="stretch-container">
-                <span class="stretch-word">stretch</span> 
-                 <span class="right-part"> across the world,</span>
-              </span>
-              what we want before we even search for it. Memory is no longer just a function of the mind,
-              it has 
-              expanded
-               into the network.</p>
-            </p>
-          </div>
-    </div>
-      
+                </span>
+                <br></div>
+        
+            <div class="split-line text mr"><span class="ml25">knowledge in meaningful ways.</span><span>What used to be mental architecture has become digital space.</span></div>
+            <div class="spacer"></div>
+            <div class="text ml25 tal">We build archives that never forget,<br></div>
+            <div class="split-line text mr"><span class="ml25">databases that 
+                <span class="stretch">stretch</span>
+                </span><span class="mr25">across the world,</span></div>
+            <div class="text mr25 tar"> algorithms that anticipate what we want before we even search for it.</div>    
+            <div class="text ml25 tal">
+                Memory is no longer just a function of the mind, it has 
+                <span class="expanded">expanded</span></div>
+                <div class="text mr25 tar">into the network</div>
 
-        <!-- Typing Animation Script -->
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const highlightBlock = document.getElementById('highlight-block');
-            const segments = [];
+        <div class="spacer"></div>
+       
+        <!-- The POWER OF NAMES AND SYMBOLS --> 
+        <div class="section">
+            <div class="header ml25 mr25">The Power of Names and Symbols</div>
+            <div class="sspacer"></div>
+            <div class="layout121">
+            <div class="box" style="position: relative;"><img src="images/wg.gif" alt="" style="height: 150px; width: 150px; position: absolute; right: 0; bottom: 0;"></div>  
+            <div class="box">
+                <div class="text">William Gibson called it <span class="cyberspace">cyberspace.</span></div>
+                <div class="text tar"><br>Philip K. Dick envisioned <span class="valis">VALIS,</span><br>a vast intelligence transmitting 
+                    <span class="hiddentruth">hidden truths</span>.</div> <br>
+                <div class="text tac">These aren't just fiction, they reflect how technology reshapes 
+                <span class="word" id="reality">reality</span>.</div>
+            </div>
+            <div class="box" style="position: relative;"><img src="images/pkd.gif" alt="" style="height: 150px; width: 150px;"></div>
+            </div>
+            <div class="sspacer"></div> 
+            <div class="layout11">
+            <div class="box"> 
+                <div class="text tar">In ancient times,<br>
+                names were thought to hold magic.<br>
+                To name something was to understand it, to control it.<br></div></div>
+            <div class="box">
+                <div class="spacer"></div>
+                <div class="text tal">In the digital age,<br>
+                naming still holds 
+                <span class="weight">weight</span>,
+                <span class="branding">branding</span>, 
+                <span class="coding">coding</span>, even 
+                <span class="hashtags">hashtags</span>.<br>
+                What we name becomes what we remember.</div>
+            </div>
+            </div>
+        </div>
+                <div class="sspacer"></div>
+                <div class="text ml">Now, we name our programs, our tools, our operating systems,<br></div>
+                <div class="spacer"></div>
+            
+                <div class="layout12221">
+                    <div class="box""></div>
+                    <div class="box texts tac siri">Siri</div>
+                    <div class="box texts tac alexa">Alexa</div>
+                    <div class="box texts tac gpt">ChatGPT</div>
+                    <div class="box"></div>
+                </div>
+                <div class="spacer"></div>
+                <div class="text tar" style="margin-right: 13%;">We talk to them.<br>
+                We rely on them.<br>
+                And slowly, they become part of our daily rituals.</div>
+            
+            <div class="sspacer"></div>
+            
+            <div class="text ml tal">
+                Interfaces are built on metaphor: desktops, folders, trash cans.<br>
+                These aren't real objects, but they make digital space understandable.<br>
+                And behind the interface, daemons and algorithms work unseen, shaping our experiences.
+            </div>
+        <div class="spacer"></div>
+        <!-- KNOWLEDGE AS A FORCE -->
+        
+            <div class="header ml mr50">Knowledge as a Force</div>
+            <div class="sspacer"></div>
+            <div class="text ml tal">
+                Gnostics believed the world was a trap, ruled by a false god.<br>
+                They sought secret knowledge, gnosis, to escape and understand reality.
+            </div>
+            <div class="sspacer"></div>
+            <div class="box">
+            <img src="images/infoflow.gif" alt="" class="bg" style="filter: blur(3px); ">
+            <div class="layout1111">
+                <div class="box"></div>
+            <div class="box text tar" style="position: relative; z-index: 1;">
+                Imagine waking up in a world that feels off. You look around, and everything seems normal, but something is missing.<br>
+                </div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>    
+            <div class="sspacer"></div>
+            <div class="box"><div class="textss infoflow tac" style="background-color: #021419;">Information flows around you, yet you sense you're only seeing what you're allowed to see.<br></div></div>
+            <div class="sspacer"></div>
+            <div class="layout1111">
+                <div class="box"></div>
+                <div class="box"></div>
+            <div class="box text tal">This is the Gnostic experience, the idea that true reality is hidden behind a veil, a construct, a false system designed to keep us from knowing too much.
+            </div></div></div>
 
-            let i = 1;
-            let segment = document.getElementById('segment' + i);
-            while (segment) {
-              segments.push(segment);
-              i++;
-              segment = document.getElementById('segment' + i);
-            }
+            <div class="spacer"></div>
             
-            let currentIndex = 0;
-            
-            function animateNextSegment() {
-              if (currentIndex >= segments.length) {
-                // Animation complete
-                return;
-              }
-              
-              const segment = segments[currentIndex];
-              const containerRect = segment.parentElement.getBoundingClientRect();
-              const segmentRect = segment.getBoundingClientRect();
-              
-              // Position highlight block precisely before showing it
-              highlightBlock.style.left = (segmentRect.left - containerRect.left) + 'px';
-              highlightBlock.style.width = segmentRect.width + 'px';
-              highlightBlock.style.opacity = '0'; // Reset opacity
-              
-              // Flash the highlight block
-              requestAnimationFrame(() => {
-                // Show highlight
-                highlightBlock.style.opacity = '1';
-                
-                // Wait a moment, then show the text and hide the highlight
-                setTimeout(() => {
-                  segment.classList.add('visible');
-                  highlightBlock.style.opacity = '0';
-                  currentIndex++;
-                  setTimeout(animateNextSegment, 300);
-                }, 200);
-              });
-            }
-            
-            // Start animation with a short delay
-            setTimeout(animateNextSegment, 300);
-          });
-        </script>
+            <div class="layout1111">
+                <div class="box text up1">Hackers break into hidden systems.</div>
+                <div class="box text up2">AI learns at an accelerating pace.</div>
+                <div class="box text up3">The internet holds vast knowledge,</div>
+                <div class="box text q1">but who controls access?</div>
+            </div>
 
+            <div class="spacer"></div>
+
+            <div class="layout1111">
+                <div class="box"></div>
+                <div class="box text" style="font-size: 25px; font-style: italic; line-height: 27px;">Information is power,<br>
+                and knowing<br>
+                the right things<br>
+                can change everything</div>
+
+                <div class="box text">Some knowledge<span style="color: #021419;">.</span><span class="word-switch">
+                    <span class="liberate">liberates.</span>
+                    <span class="manipulate">manipulates.</span>
+            </span> <br>
+                    <!-- liberate changes to manipulate -->
+                What we see online is curated, filtered, ranked. <br>
+                The search engine suggests. <br>
+                The algorithm guides. <br></div>
+                <div class="box text q2"> <br><br><br><br>Who decides what we learn?</div>
+            </div>
+            <div class="sspacer"></div>
+            <div class="text mr tar" style="font-size: 13.2px; font-style: italic;">
+                Philip K. Dick believed he received a transmission of hidden knowledge, a moment of revelation. 
+                <br>Was it madness? Or insight?
+            </div>
+            <div class="spacer"></div>
+            <div class="solid5" style="height: 300px;"></div>
+            <div class="box">
+                <div class="popuptext put1" style="position: absolute; top: 8%; left: 15%; font-size: 24px;">HEADLINES</div>
+                <div class="popuptext put2" style="position: absolute; top: 85%; left: 25%; font-size: 28px;">HEADLINES</div>
+                <div class="popuptext put3" style="position: absolute; top: 18%; left: 82%; font-size: 45px;">HEADLINES</div>                
+                <div class="popuptext put4" style="position: absolute; top: 78%; left: 85%; font-size: 42px;">NOTIFICATIONS</div>
+                <div class="popuptext put5" style="position: absolute; top: 25%; left: 8%; font-size: 38px;">NOTIFICATIONS</div>
+                <div class="popuptext put6" style="position: absolute; top: 68%; left: 12%; font-size: 35px;">NOTIFICATIONS</div>
+                <div class="popuptext put7" style="position: absolute; top: 12%; left: 75%; font-size: 31px;">SOCIAL MEDIA</div>
+                <div class="popuptext put8" style="position: absolute; top: 72%; left: 78%; font-size: 22px;">SOCIAL MEDIA</div> 
+                <div class="popuptext put9" style="position: absolute; top: 55%; left: 7%; font-size: 26px;">SOCIAL MEDIA</div>
+
+                <div class="popuptext put10" style="position: absolute; top: 45%; left: 88%; font-size: 52px;">HEADLINES</div>
+                <div class="popuptext put11" style="position: absolute; top: 92%; left: 65%; font-size: 33px;">NOTIFICATIONS</div>
+                <div class="popuptext put12" style="position: absolute; top: 5%; left: 22%; font-size: 36px;">SOCIAL MEDIA</div>
+                <div class="popuptext put13" style="position: absolute; top: 81%; left: 93%; font-size: 20px;">HEADLINES</div>
+                <div class="popuptext put14" style="position: absolute; top: 14%; left: 77%; font-size: 49px;">NOTIFICATIONS</div>
+                <div class="popuptext put15" style="position: absolute; top: 95%; left: 18%; font-size: 32px;">SOCIAL MEDIA</div>
+                <div class="popuptext put16" style="position: absolute; top: 23%; left: 90%; font-size: 58px;">HEADLINES</div>
+                <div class="popuptext put17" style="position: absolute; top: 87%; left: 5%; font-size: 29px;">NOTIFICATIONS</div>
+                <div class="popuptext put18" style="position: absolute; top: 27%; left: 80%; font-size: 41px;">SOCIAL MEDIA</div>
+                <div class="popuptext put19" style="position: absolute; top: 74%; left: 10%; font-size: 54px;">HEADLINES</div>
+                <div class="popuptext put20" style="position: absolute; top: 19%; left: 73%; font-size: 39px;">NOTIFICATIONS</div>
+                <div class="popuptext put21" style="position: absolute; top: 90%; left: 27%; font-size: 46px;">SOCIAL MEDIA</div>
+                <div class="popuptext put22" style="position: absolute; top: 22%; left: 60%; font-size: 23px;">HEADLINES</div>
+                <div class="popuptext put23" style="position: absolute; top: 65%; left: 45%; font-size: 37px;">SOCIAL MEDIA</div>
+                <div class="popuptext put24" style="position: absolute; top: 13%; left: 35%; font-size: 51px;">NOTIFICATIONS</div>
+                <div class="popuptext put25" style="position: absolute; top: 18%; left: 68%; font-size: 30px;">HEADLINES</div>
+                <div class="popuptext put26" style="position: absolute; top: 33%; left: 50%; font-size: 44px;">SOCIAL MEDIA</div>
+                <div class="popuptext put27" style="position: absolute; top: 82%; left: 585%; font-size: 27px;">NOTIFICATIONS</div>
+                <div class="popuptext put28" style="position: absolute; top: 23%; left: 32%; font-size: 56px;">HEADLINES</div>
+                <div class="popuptext put29" style="position: absolute; top: 52%; left: 2%; font-size: 34px;">SOCIAL MEDIA</div>
+                <div class="popuptext put30" style="position: absolute; top: 37%; left: 4%; font-size: 43px;">NOTIFICATIONS</div>
+            <div class="text tac" style="height: 500px; align-content: center; z-index: 55;">
+                We consume knowledge every second, headlines, notifications, social media feeds.<br>
+                But what happens when the flow of information becomes overwhelming?<br>
+                When truth is hidden in layers of data, misinformation, and noise?
+            </div></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="text tac">
+                We are no longer just seekers of knowledge; we are <span class="drowning">drowning</span> in it.
+            </div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+
+        <!-- THE RISE OF INTELLIGENT SYSTEMS -->
+         <div class="layout11">
+                <div class="box" style="align-content: center; top: 40px; left: 25%;"> <img src="images/logoglitch.gif" alt="" style="height: 400px; width: 400px;"></div>
+                <div class="box">
+            <div class="header ml ">The Rise of Intelligent Systems</div>
+            <div class="sspacer"></div>
+            <div class="text">
+                Technology is no longer just a tool, it predicts, adapts, and influences. AI assistants, recommendation algorithms, self-learning machines. They shape what we see, hear, and do.
+            </div>
+            <div class="sspacer"></div>
+            <div class="layout11">
+            <div class="box text tar">
+                In ancient times,<br>
+                people believed angels carried out
+                divine will, passionless, intelligent forces.</div>
+            <div class="box text tal">
+                <br><br>Today,<br>
+                algorithms operate with a similar detachment,
+                making decisions that affect millions.
+            </div></div>
+            <div class="sspacer"></div>
+            <div class="text">
+                We train them. We refine them. And then, at some point, they begin to operate beyond us. AI writes articles. AI creates images. AI predicts the future.
+            </div>
+            
+            <div class="text">
+                AI doesn't have desires, emotions, or beliefs. But it does have directives, set by programmers, refined by data. In a way, AI is the purest form of a messenger: it delivers information, without emotion, without bias...<br>
+                <div class="text tar">except the biases we give it.</div>
+            </div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="section">
+            <div class="header ml mr50">A New Era of Transformation</div>
+            <div class="sspacer"></div>
+        <div class="layout13">
+            <div class="box text tal guide-bottom">
+                Some believe we're approaching a major shift, AI awakening, merging with machines, or evolving consciousness. Maybe the changes aren't as dramatic as science fiction suggests, but we're already seeing how technology alters identity, memory, and communication.
+            </div>
+            <div class="box text tal">
+                We live in an age of deepfakes, of digital clones, of voices that never spoke but now speak. The self is no longer fixed. The boundaries of reality blur.
+            </div>
+        </div>    
+                <div class="text tar q4" style="position: relative;">Who are we when our memories are externalized?<br></div>
+                <div class="text tar q5" style="position: relative;">When our thoughts are predicted?<br></div>
+        
+        <div class="layout13" style="align-items: stretch;">
+        <div class="box text tal">
+                We are already merging with the digital world. Our social lives, our work, our creativity—all mediated through screens, stored in databases, archived in the cloud.
+            </div>
+            <div class="split-column">
+                <div class="text tar q6">When our identities are shaped by data points and algorithms?</div>
+                <div class="text tal">From ancient magic to modern networks, the quest remains the same:<br>
+                Information isn't just something we consume, it shapes us in ways we're only beginning to understand.</div>
+            </div>
+            </div>
+        </div>    
+        
+               
+            <div class="spacer"></div>
+           
         
 
+            <div class="text forward" style="position: relative;">
+                As we move forward, the line between human and machine, myth and reality, will continue to shift.</div>
+            <div class="text tar">
+                The question is not whether technology is alive, but whether we are listening to what it tells us.
+            </div>
 
-    
+            <div class="spacer"></div>
+            
+            <!-- FUTURE -->
+            <div class="header ml25 mr25">The Future of the Unknown</div>
+            <div class="sspacer"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;">
+    <div class="text tar">In the past,<br>
+                prophets looked to the stars for guidance.</div>
+    <div class="text tal"><br>Today,<br>we look at data.<br></div>
+    <div></div>
+        </div>
+            <div class="sspacer"></div>
+            <div class="layout11">
+                <div class="layout11">
+                    <div></div>
+                    <div class="box text tal up4"> We try to predict the future. <br></div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;">
+                    <div class="box text tal up5">We analyse trends,</div>
+                    <div class="box text tal up6">model behaviours,</div>
+                    <div class="box text tal up7">train AI to think ahead.</div>
+                </div>
+            </div>
+            <div class="layout11">
+                <div></div>
+                <div class="box text tal"><br>But no algorithm can fully account for chaos, for human will, for the unpredictable turns of history.</div>
+            </div>
+            <div class="spacer"></div>
+            <div class="layout11">
+                <div class="box text tal">Some believe we are heading toward singularity, a point where AI surpasses human intelligence. Some believe we are already there, in ways we don't yet recognize. Others believe that we are simply watching history repeat itself, new technologies, old desires, the same search for meaning.
+                <br>We stand on the edge of something vast. Whether it is enlightenment or illusion, progress or repetition, remains uncertain.</div>
+                <div></div>
+            </div>
 
-
-    <div class="container">
-        <div class="swatch"></div>
-        <div class="swatch bg-cyan"></div>
+            <div class="layout11">
+                 <div class="box text tal forward2">But we continue forward.</div>
+                <div class="box text tar">We always have.</div>
+            </div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+            <div class="text tac">
+                This was Techgnosis.<br>
+                The transmission is complete.
+            </div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
     </div>
+</div>
+</div>
+
 
 </body>
 </html>
