@@ -1,7 +1,7 @@
 const classChanges = [
   
 
-    { time: 53.1, target: ".florence-image", add: "expanding-image" },
+    { time: 53.1, target: ".image-container", add: "animate" },
     { time: 77, target: ".impulse-text", add: "shake" },
     { time: 79, target: ".start-typing", add: "trigger" },
     { time: 93, target: ".stretch", add: "stretcha" },
@@ -170,5 +170,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }, change.time * 1000); 
 });
         });
-    }
-,);
+    });
