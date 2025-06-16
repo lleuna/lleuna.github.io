@@ -1,89 +1,96 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    function updateHealthBar() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPercentage = scrollTop / scrollHeight;
-        const remainingHealth = 100 - (scrollPercentage * 100);
+function updateHealthBar() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Fix: Handle division by zero
+    if (scrollHeight <= 0) return;
+    
+    const scrollPercentage = scrollTop / scrollHeight;
+    // Fix: Prevent negative values
+    const remainingHealth = Math.max(0, Math.min(100, 100 - (scrollPercentage * 100)));
+    
+    const healthBar = document.getElementById('healthBar');
+    if (healthBar) {
+        healthBar.style.width = remainingHealth + '%';
         
-        const healthBar = document.getElementById('healthBar');
-        if (healthBar) {
-            healthBar.style.width = remainingHealth + '%';
-            
-            if (remainingHealth < 20) {
-                healthBar.style.backgroundImage = 'linear-gradient(to right, #F2D0E5, rgb(235, 199, 222))';
-            } else if (remainingHealth < 50) {
-                healthBar.style.backgroundImage = 'linear-gradient(to right, #CD95C2, rgb(205, 149, 194))';
-            } else {
-                healthBar.style.backgroundImage = 'linear-gradient(to right, #7AC6C0, rgb(130, 204, 198))';
-            }
+        if (remainingHealth < 20) {
+            healthBar.style.backgroundImage = 'linear-gradient(to right, #F2D0E5, rgb(235, 199, 222))';
+        } else if (remainingHealth < 50) {
+            healthBar.style.backgroundImage = 'linear-gradient(to right, #CD95C2, rgb(205, 149, 194))';
+        } else {
+            healthBar.style.backgroundImage = 'linear-gradient(to right, #7AC6C0, rgb(130, 204, 198))';
         }
+    } else {
+        console.error('Health bar element not found!');
     }
+}
     
     window.addEventListener('scroll', updateHealthBar);
     updateHealthBar();
     
 
-    // Typing
+//     // Typing
           
-            const highlightBlock = document.getElementById('highlight-block');
-            const segments = [];
+//             const highlightBlock = document.getElementById('highlight-block');
+//             const segments = [];
 
-            let i = 1;
-            let segment = document.getElementById('segment' + i);
-            while (segment) {
-              segments.push(segment);
-              i++;
-              segment = document.getElementById('segment' + i);
-            }
+//             let i = 1;
+//             let segment = document.getElementById('segment' + i);
+//             while (segment) {
+//               segments.push(segment);
+//               i++;
+//               segment = document.getElementById('segment' + i);
+//             }
             
-            let currentIndex = 0;
+//             let currentIndex = 0;
             
-            function animateNextSegment() {
-              if (currentIndex >= segments.length) {
-                // Animation complete
-                return;
-              }
+//             function animateNextSegment() {
+//               if (currentIndex >= segments.length) {
+//                 // Animation complete
+//                 return;
+//               }
               
-              const segment = segments[currentIndex];
-              const containerRect = segment.parentElement.getBoundingClientRect();
-              const segmentRect = segment.getBoundingClientRect();
+//               const segment = segments[currentIndex];
+//               const containerRect = segment.parentElement.getBoundingClientRect();
+//               const segmentRect = segment.getBoundingClientRect();
               
-              // Position highlight block precisely before showing it
-              highlightBlock.style.left = (segmentRect.left - containerRect.left) + 'px';
-              highlightBlock.style.width = segmentRect.width + 'px';
-              highlightBlock.style.opacity = '0'; // Reset opacity
+//               // Position highlight block precisely before showing it
+//               highlightBlock.style.left = (segmentRect.left - containerRect.left) + 'px';
+//               highlightBlock.style.width = segmentRect.width + 'px';
+//               highlightBlock.style.opacity = '0'; // Reset opacity
               
-              // Flash the highlight block
-              requestAnimationFrame(() => {
-                // Show highlight
-                highlightBlock.style.opacity = '1';
+//               // Flash the highlight block
+//               requestAnimationFrame(() => {
+//                 // Show highlight
+//                 highlightBlock.style.opacity = '1';
                 
-                // Wait a moment, then show the text and hide the highlight
-                setTimeout(() => {
-                  segment.classList.add('visible');
-                  highlightBlock.style.opacity = '0';
-                  currentIndex++;
-                  setTimeout(animateNextSegment, 300);
-                }, 200);
-              });
-            }
+//                 // Wait a moment, then show the text and hide the highlight
+//                 setTimeout(() => {
+//                   segment.classList.add('visible');
+//                   highlightBlock.style.opacity = '0';
+//                   currentIndex++;
+//                   setTimeout(animateNextSegment, 300);
+//                 }, 200);
+//               });
+//             }
             
-            // Start animation with a short delay
-            setTimeout(animateNextSegment, 7900);
+//             // Start animation with a short delay
+//             setTimeout(animateNextSegment, 7900);
 
-    const highlightBlock = document.getElementById('highlight-block');
-const segments = [];
+//     const highlightBlock = document.getElementById('highlight-block');
+// const segments = [];
 
-let i = 1;
-let segment = document.getElementById('segment' + i);
-while (segment) {
-  segments.push(segment);
-  i++;
-  segment = document.getElementById('segment' + i);
-}
+// let i = 1;
+// let segment = document.getElementById('segment' + i);
+// while (segment) {
+//   segments.push(segment);
+//   i++;
+//   segment = document.getElementById('segment' + i);
+// }
 
-let currentIndex = 0;
+// let currentIndex = 0;
 let typingStarted = false;
 
 function animateNextSegment() {
